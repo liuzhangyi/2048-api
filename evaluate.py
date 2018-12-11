@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     '''====================
     Use your own agent here.'''
-    from game2048.agents import ExpectiMaxAgent as TestAgent
+    from game2048.agents import RandomAgent as TestAgent
     '''===================='''
 
     scores = []
