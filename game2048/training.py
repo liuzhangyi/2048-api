@@ -123,39 +123,6 @@ for batch_no in range(1,10000):
 
 
 
-class Agent:
-    '''Agent Base.'''
-
-    def __init__(self, game, display=None):
-        self.game = game
-        self.display = display
-
-    def play(self, max_iter=np.inf, verbose=False):
-        n_iter = 0
-        while (n_iter < max_iter) and (not self.game.end):
-            direction = self.step()
-            self.game.move(direction)
-            n_iter += 1
-            if verbose:
-                print("Iter: {}".format(n_iter))
-                print("======Direction: {}======".format(
-                    ["left", "down", "right", "up"][direction]))
-                if self.display is not None:
-                    self.display.display(self.game)
-
-    def step(self):
-        direction = int(input("0: left, 1: down, 2: right, 3: up = ")) % 4
-        return direction
-
-
-class myAgent(Agent):
-
-    def step(self):
-	board=grid_ohe(self.game.board)
-        direction = model.predict(np.expand_dims(board,axis=0)).argmax()
-        return direction
-
-
 
 
 
