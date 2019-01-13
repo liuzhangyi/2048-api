@@ -1,7 +1,7 @@
 '''A numpy-based 2048 game core implementation.'''
 
 import numpy as np
-
+import math
 
 class Game:
 
